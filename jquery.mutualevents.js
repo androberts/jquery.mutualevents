@@ -7,7 +7,7 @@
          var options = $.extend(true, {
              bidirectional: true,
              events: {
-                 "hover" : "hover"   
+                 ":hover" : ":hover"   
              }
          }, customOptions);
         
@@ -21,7 +21,7 @@
                        var eventRight = options.events[eventLeft];
                        var $rightEl = $($rightElements[i]);
 
-                       if (eventLeft == "hover" && eventRight == "hover") {
+                       if (eventLeft == ":hover" && eventRight == ":hover") {
 
                           $leftEl.on('mouseenter', function() {
                             $rightEl.addClass('hover');
