@@ -1,0 +1,39 @@
+<!doctype html>
+<style>
+
+tr.hover, tr:hover {
+    background: blue;
+}
+
+
+</style>
+
+<table id="table-1" border=1>
+    <tr><td>row 1</td></tr>
+    <tr><td>row 2</td></tr>
+    <tr><td>row 3</td></tr>
+</table>
+<br/><br/>
+<table id="table-2" border=1>
+    <tr><td>row 1</td></tr>
+    <tr><td>row 2</td></tr>
+    <tr><td>row 3</td></tr>
+</table>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../jquery.mutualevents.js"></script>
+
+<script>
+$('#table-1 tr').mutualEvents($('#table-2 tr'), {
+	events: {
+		'mouseenter': 'mouseenter',
+		'mouseleave': 'mouseleave'
+	}});
+
+
+	$('tr').on('mouseenter', function() {
+		console.log('mouseenter', $(this));
+	}).on('mouseleave', function() {
+		console.log('mouseleave', $(this));
+	})
+</script>
